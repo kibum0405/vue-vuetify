@@ -1,35 +1,9 @@
 <template>
-  <v-container style="width:100%;
-    margin-top:20px;">
-        <v-row>
-            <div style = "width:49%; background-color:red;">123</div>
-
-            <!-- 오른쪽 -->
-            <div style = "width:49%; margin-left:2%;">
-                <v-card  
-                    style="width:100%;
-                    height:300px;"
-                >
-                <v-card-title>todoList</v-card-title>
-                    <v-textarea
-                        height="150"
-                        solo
-                        label="todoList - text"
-                        style="padding:3%;
-                        margin-top:-20px;"
-                    ></v-textarea>
-                
-
-
-                </v-card>
-            </div>
-        </v-row>
-      
-  </v-container>
+    <div>투두리스트</div>
 </template>
 
 <script>
-  export default {
-    name: 'todoList',
-  }
+    export default {
+        name: 'todoList',
+    }
 </script>
