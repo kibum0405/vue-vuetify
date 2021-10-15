@@ -35,13 +35,13 @@
     <v-main>
         <v-row>
             <v-col cols="6">
-                <todoList/>
-                {{ todoList }}
+                <List
+                />
             </v-col>
 
             <v-col cols="6">
-                <addList
-                    @listAdd="listAdd()"
+                <ListAdd
+                    @listAdd="listAdd"
                 />
             </v-col>
         </v-row>
@@ -53,30 +53,26 @@
 </template>
 
 <script>
-import todoList from './components/todoList';
-import addList from './components/addList';
+import List from '@/components/List'
+import ListAdd from '@/components/ListAdd'
 
 export default {
-    name: 'App',
-    data(){
-        return{
-            todoList: [],
-        } 
-    },
-
+    name: 'Home',
     components: {
-        todoList,
-        addList,
+        List,
+        ListAdd
     },
-
+    data() {
+        return {
+            todoList: [],
+        }
+    },
     methods: {
-        listAdd(memo) {
-            this.todoList.push({
-                memo : memo,
-                status : "created"
-            })
-        },
-    },
-
+        listAdd(memo){
+            this.todoList.push(memo)
+            console.log(memo)
+        }
+    }
+    
 };
 </script>
