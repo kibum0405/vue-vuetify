@@ -2,9 +2,9 @@
     <div>
         <v-col
             cols="12"
-            v-model="memo"
         >
             <v-textarea
+                v-model="memo"
                 outlined
                 label="Add To-Do"
             ></v-textarea>
@@ -41,7 +41,7 @@
                 console.log('리스트 추가')
                 if(this.memo === null) {
                     console.log('할일을 입력 해주세요')
-                }   else {
+                } else {
                     this.$emit("listAdd", this.memo)
                 }
             }

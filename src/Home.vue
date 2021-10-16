@@ -1,10 +1,10 @@
 <template>
-  <v-app>
-      <div>
-          <v-app-bar
-            app
-            color="primary"
-            dark
+    <v-app>
+        <div>
+            <v-app-bar
+                app
+                color="primary"
+                dark
             >
                 <v-btn text href="/ " class="d-flex align-center">
                     <v-img
@@ -34,13 +34,16 @@
 <div>
     <v-main>
         <v-row>
-            <v-col cols="6">
+            <v-col  cols="6">
                 <List
+                    :todoList="todoList"
+                    @statusControl="statusControl"
+                    @listDelete="listDelete"
                 />
             </v-col>
 
             <v-col cols="6">
-                <ListAdd
+                <ListAdd 
                     @listAdd="listAdd"
                 />
             </v-col>
@@ -69,8 +72,19 @@ export default {
     },
     methods: {
         listAdd(memo){
-            this.todoList.push(memo)
-            console.log(memo)
+            console.log("받았어 !")
+            this.todoList.push({ memo: memo, status: "created" })
+        },
+        statusControl(index, status){
+            this.todoList[index].status = status
+        },
+
+        listDelete(index){
+            this.todoList.splice(index, 1)
+        },
+
+        listEdit(){
+            
         }
     }
     
