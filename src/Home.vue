@@ -33,8 +33,12 @@
 <!-- 투두리스트 영역 -->
 <div>
     <v-main>
+        <div style = "text-align:center;">
+            <h1>할일 목록</h1>
+            <p>전체 할일: {{ todoList.length }}/ 완료돤 할일: / 남은 할일: </p>
+        </div>
         <v-row>
-            <v-col  cols="6">
+            <v-col cols="6">
                 <List
                     :todoList="todoList"
                     @statusControl="statusControl"
@@ -70,6 +74,9 @@ export default {
         return {
             todoList: [],
         }
+    },
+    computed: {
+
     },
     methods: {
         listAdd(memo){
