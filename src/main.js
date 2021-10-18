@@ -11,6 +11,14 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false
 
+export const eventBus = new Vue({
+  methods: {
+    listEdit(memo, index) {
+      this.$emit('listEdit', memo, index)
+    }
+  }
+})
+
 new Vue({
   vuetify,
   render: h => h(Home)

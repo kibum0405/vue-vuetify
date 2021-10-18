@@ -21,7 +21,8 @@
                     </v-btn>
 
                     <!-- 수정 -->
-                    <v-btn  v-if="list.status === 'created'"
+                    <v-btn @click="listEdit(list.memo, index)"
+                        v-if="list.status === 'created'"
                         fab text small color="orange"
                     >
                         <v-icon>mdi-pencil</v-icon>
@@ -49,11 +50,15 @@
 </template>
 
 <script>
+import { eventBus } from "../main"
+
     export default {
         name: 'todoList',
         props:["todoList"],
         methods: {
-
+            listEdit(memo, index) {
+                eventBus.listEdit(memo, index)
+            }
         }
     }
 </script>

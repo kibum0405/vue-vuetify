@@ -45,6 +45,7 @@
             <v-col cols="6">
                 <ListAdd 
                     @listAdd="listAdd"
+                    @listEdit="listEdit"
                 />
             </v-col>
         </v-row>
@@ -72,7 +73,6 @@ export default {
     },
     methods: {
         listAdd(memo){
-            console.log("받았어 !")
             this.todoList.push({ memo: memo, status: "created" })
         },
         statusControl(index, status){
@@ -83,8 +83,8 @@ export default {
             this.todoList.splice(index, 1)
         },
 
-        listEdit(){
-            
+        listEdit(memo, index){
+            this.todoList[index].memo = memo
         }
     }
     
