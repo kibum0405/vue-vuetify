@@ -74,7 +74,15 @@
                     </div>
 
                     <div v-if="tab === 1">
-                        <div style = "width:100px; height:100px; background-color:red;"></div>
+                        <VueStudy/>
+                    </div>
+                    
+                    <div v-if="tab === 2">
+                        <div style = "width:100px; height:100px; background-color:blue;"></div>
+                    </div>
+
+                    <div v-if="tab === 3">
+                        <div style = "width:100px; height:100px; background-color:green;"></div>
                     </div>
                 </v-tab-item>
             </v-tabs-items>
@@ -87,12 +95,14 @@
 <script>
 import List from '@/components/List'
 import ListAdd from '@/components/ListAdd'
+import VueStudy from '@/components/vueStudy/vueStudy'
 
 export default {
     name: 'Home',
     components: {
         List,
-        ListAdd
+        ListAdd,
+        VueStudy
     },
     data() {
         return {
