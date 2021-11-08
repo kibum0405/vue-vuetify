@@ -1,8 +1,9 @@
 <template>
   <v-container>
-      <h1 align="center">뷰 기초 익히기</h1>
-      <div>이름 : {{ person.name }} / 나이 : {{ person.age }} 123</div>
-      <v-btn @click="add()"></v-btn>
+        <h1 align="center">뷰 기초 익히기</h1>
+        <div>이름 : {{ person.name }} / 나이 : {{ person.age }}</div>
+        <v-btn @click="plus()" color="primary">plus</v-btn>
+        <v-btn @click="subtract()" color="red">subtract</v-btn>
 
   </v-container>
 </template>
@@ -19,9 +20,16 @@ export default {
         }
     },
     methods: {
-        add() {
+        plus() {
+            if(this.person.age < 20 && this.person.name == "park") {
+                this.person.age = this.person.age +1
+            } else {
+                this.person.age = this.person.age -1
+            }
+        },
+        subtract() {
             if(this.person.name == "park") {
-                this.person.age = 18
+                this.person.age = this.person.age -1
             }
         }
     }
